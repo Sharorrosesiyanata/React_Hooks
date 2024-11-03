@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import { Form, Button, Alert } from "react-bootstrap";
 
 function UserForm() {
-    const [username, setUserName] = useState(" ");
+    const [institution, setInstitution] = useState(" ");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
     //setting error initial state
-    const [usernameError, setUsernameError] = useState("");
+    const [institutionError, setInstitutionError] = useState("");
     const [emailError, setEmailError] = useState("");
     const [passwordError, setPasswordError] = useState("");
 
@@ -15,7 +15,7 @@ function UserForm() {
         //prevents default submisions
         //allows fields to be filled out
         e.preventDefault();
-        let usernameValid = false;
+        let institutionValid = false;
         let emailValid = false;
         let passwordValid = false;
         //validation rules for email
@@ -30,7 +30,7 @@ function UserForm() {
             emailValid = true;
         }
         if (emailValid) {
-            alert("Email: " + email + "\nPassword: " + password + "\nUserName: " + username);
+            alert("Email: " + email + "\nPassword: " + password + "\nInstitution: " + institution);
         }
         //validation rules for password
         if (password.length < 8) {
@@ -42,7 +42,7 @@ function UserForm() {
 
         //submits once data is valid
         if (emailValid && passwordValid) {
-            alert("Email: " + email + "\nPassword: " + password);
+            alert("Email: " + email + "\nPassword: " + password + "\nInstitution: " + institution);
             setEmail("");
             setPassword("");
             //   setEmailError('');
@@ -53,21 +53,22 @@ function UserForm() {
     return (
         <div>
             <Form onSubmit={handleSubmit}>
-                <Form.Group controlId="formBasicUserName">
-                    <Form.Label>UserName</Form.Label>
+                <Form.Group controlId="formBasicInstitution">
+                    <Form.Label>Institution</Form.Label>
                     <Form.Control
-                        type="username"
-                        placeholder="Enter UserName"
-                        onChange={(e) => setUserName(e.target.value)}
-                        value={username}
+                        type="institution"
+                        placeholder="Enter Institution"
+                        onChange={(e) => setInstitution(e.target.value)}
+                        value={institution}
                     />
                     <Form.Text className="text-muted">
-                        We need to know who you are!
+                        We need to know which Institution you under!
                     </Form.Text>
-                    {usernameError.length > 0 && (
-                        <Alert variant="danger">{usernameError}</Alert>
+                    {institutionError.length > 0 && (
+                        <Alert variant="danger">{institutionError}</Alert>
                     )}
-                    
+                    </Form.Group>
+                    <Form.Group controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
                     <Form.Control
                         type="email"
