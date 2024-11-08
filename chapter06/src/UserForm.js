@@ -39,15 +39,25 @@ function UserForm() {
             setPasswordError("");
             passwordValid = true;
         }
+        if (institution.length == 0) {
+            setInstitutionError("Institution description is required");
+        } else if (institution.length < 5) {
+            setInstitutionError("Institution description should be minimum 5 characters");
+        } else {
+            setInstitutionError("");
+            institutionValid = true;
+        }
 
         //submits once data is valid
-        if (emailValid && passwordValid) {
+        if (emailValid && passwordValid && institutionValid) {
             alert("Email: " + email + "\nPassword: " + password + "\nInstitution: " + institution);
             setEmail("");
             setPassword("");
+            setInstitution("");
             //   setEmailError('');
             //   setPasswordError('');
         }
+        
     };
 
     return (
