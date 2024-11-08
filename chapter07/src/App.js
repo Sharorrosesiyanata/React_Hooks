@@ -1,5 +1,5 @@
 import React from 'react';
-//import GitHub from './GitHub';
+import GitHub from './GitHub';
 
 function App() {
   return (
