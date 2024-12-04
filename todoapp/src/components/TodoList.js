@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 const Todo = () => {
   const [todos, setTodos] = useState([]);
   const [input, setInput] = useState('');
-  const [editId, setEditId] = useState(null);
+  // const [editId, setEditId] = useState(null);
 
   const navigate = useNavigate();
 
