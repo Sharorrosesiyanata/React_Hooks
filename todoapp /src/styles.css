@@ -1,0 +1,153 @@
+/* Global Styling */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #6a2847, #311616);
+  color: #f0e9e9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding-top: 20px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: 100%;
+  max-width: 500px;
+}
+
+/* Task List Items */
+ul li {
+  position: relative;
+  padding: 15px 20px 15px 45px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #f0e9e9;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  font-size: 18px;
+  margin-bottom: 10px;
+  transition: transform 0.2s ease, background 0.3s ease, box-shadow 0.3s ease;
+}
+
+ul li:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+ul li.checked {
+  background: #4a4a4a;
+  color: #b5b5b5;
+  text-decoration: line-through;
+}
+
+ul li.checked::before {
+  content: '';
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+  border: 3px solid #4caf50;
+  height: 10px;
+  width: 5px;
+}
+
+/* Close Button */
+.close {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+  color: #f44336;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s, color 0.2s;
+}
+
+.close:hover {
+  color: #ff6b6b;
+  transform: scale(1.2);
+}
+
+/* Header */
+.header {
+  width: 100%;
+  max-width: 500px;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Input and Button */
+input {
+  width: 70%;
+  padding: 15px;
+  border: none;
+  border-radius: 20px 0 0 20px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #f0e9e9;
+  font-size: 16px;
+  outline: none;
+}
+
+input::placeholder {
+  color: #ccc;
+}
+
+.addBtn {
+  width: 30%;
+  padding: 15px;
+  border: none;
+  border-radius: 0 20px 20px 0;
+  background: #872357;
+  color: #f0e9e9;
+  font-size: 16px;
+  cursor: pointer;
+  transition: transform 0.3s, background 0.3s;
+}
+
+.addBtn:hover {
+  background: #a4376f;
+  transform: scale(1.05);
+}
+
+/* Popup Message */
+.popup {
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 128, 0, 0.9);
+  color: #fff;
+  padding: 15px 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  font-size: 16px;
+  z-index: 1000;
+  animation: fade-in-out 3s ease-in-out;
+}
+
+/* Fade Animation */
+@keyframes fade-in-out {
+  0%, 80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
